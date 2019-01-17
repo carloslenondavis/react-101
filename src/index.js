@@ -9,6 +9,7 @@ import App from './components/containers/App';
 import store from './common/store';
 // #endregion
 // #region load styles
+import 'antd/dist/antd.css';
 import './index.scss';
 // #endregion
 

@@ -1,13 +1,12 @@
-// #region load dependencies
+// #region dependencies
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Switch, Route, withRouter } from 'react-router-dom';
 // #endregion
-// #region load components
-import Avatar from '../../presentational/Avatar';
+// #region components
+import Layouts from '../Layouts';
 import Paragraph from '../../presentational/Paragraph';
-import { getInfo } from '../../../services/profile';
 // #endregion
 // #region constant
 import appRouter from '../../../common/constant/routerView/app';
@@ -31,10 +30,7 @@ class App extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(getInfo());
-  }
+  componentDidMount() {}
 
   /**
    * @function
@@ -44,27 +40,14 @@ class App extends React.Component {
    * @return {JSX} Components for App
    */
   render() {
-    const profileName = 'Carlos Lenon';
-    const photoUrl = 'https://avatars0.githubusercontent.com/u/4239218?s=400&u=f2778b9e2ca31ad43ff98c632f2e22e15ab46784&v=4';
-    const emails = {
-      prof: 'dev@carloslenon.com',
-      code: 'code@carloslenon.com',
-    };
     const { paragraph: { info } } = appRouter;
-    // const { children } = this.props;
 
     return (
-      <>
-        <Avatar
-          name={profileName}
-          photoUrl={photoUrl}
-          profEmail={emails.prof}
-          codeEmail={emails.code}
-        />
+      <Layouts>
         <Switch>
           <Route path={info} component={Paragraph} />
         </Switch>
-      </>
+      </Layouts>
     );
   }
 }
@@ -83,13 +66,11 @@ const mapStateToProps = state => ({
 });
 
 App.propTypes = {
-  dispatch: PropTypes.func,
-  // children: PropTypes.node,
+  // dispatch: PropTypes.func,
 };
 
 App.defaultProps = {
-  dispatch: '',
-  // children: [],
+  // dispatch: '',
 };
 
 export default withRouter(connect(mapStateToProps)(App));
