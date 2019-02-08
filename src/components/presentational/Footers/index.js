@@ -25,7 +25,7 @@ const Footers = () => (
       <Icon type="heart" />
       <span className="creator">
         <span>by</span>
-        <span className="name">clenondavis</span>
+        <span className="name">ingenierfonseca</span>
       </span>
     </p>
   </div>
