@@ -7,6 +7,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 // #region components
 import Layouts from '../Layouts';
 import Avatar from '../../presentational/Avatar';
+import Todo from '../Todo';
 // #endregion
 // #region constant
 import appRouter from '../../../common/constant/routerView/app';
@@ -40,12 +41,20 @@ class App extends React.Component {
    * @return {JSX} Components for App
    */
   render() {
-    const { profile: { info } } = appRouter;
+    const {
+      profile: {
+        info,
+      },
+      todo: {
+        list,
+      },
+    } = appRouter;
 
     return (
       <Layouts>
         <Switch>
-          <Route path={info} component={Avatar} />
+          <Route exact path={info} component={Avatar} />
+          <Route exact path={list} component={Todo} />
         </Switch>
       </Layouts>
     );

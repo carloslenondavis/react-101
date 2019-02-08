@@ -13,4 +13,7 @@ export default {
   paragraph: {
     info: '/paragraph',
   },
+  todo: {
+    list: '/todo/list',
+  },
 };

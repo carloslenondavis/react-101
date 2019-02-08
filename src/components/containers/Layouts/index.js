@@ -87,7 +87,7 @@ class Layouts extends React.Component {
             </Menu.Item>
             <Menu.Item key="2">
               <Icon type="ordered-list" />
-              <NavLink to="/todo">ToDo</NavLink>
+              <NavLink to="/todo/list">ToDo</NavLink>
             </Menu.Item>
           </Menu>
         </Sider>
