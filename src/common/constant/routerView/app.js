@@ -7,6 +7,9 @@
 const main = '/';
 export default {
   default: `${main}`,
+  profile: {
+    info: '/profile',
+  },
   paragraph: {
     info: '/paragraph',
   },

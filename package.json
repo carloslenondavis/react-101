@@ -53,6 +53,7 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.2.3",
     "antd": "^3.12.3",
+    "moment": "^2.23.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

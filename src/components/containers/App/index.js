@@ -6,7 +6,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 // #endregion
 // #region components
 import Layouts from '../Layouts';
-import Paragraph from '../../presentational/Paragraph';
+import Avatar from '../../presentational/Avatar';
 // #endregion
 // #region constant
 import appRouter from '../../../common/constant/routerView/app';
@@ -40,12 +40,12 @@ class App extends React.Component {
    * @return {JSX} Components for App
    */
   render() {
-    const { paragraph: { info } } = appRouter;
+    const { profile: { info } } = appRouter;
 
     return (
       <Layouts>
         <Switch>
-          <Route path={info} component={Paragraph} />
+          <Route path={info} component={Avatar} />
         </Switch>
       </Layouts>
     );

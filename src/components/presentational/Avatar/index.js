@@ -1,10 +1,8 @@
 // #region load dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 // #endregion
 // #region constant
-import appRouter from '../../../common/constant/routerView/app';
 // #endregion
 
 /**
@@ -17,18 +15,38 @@ import appRouter from '../../../common/constant/routerView/app';
  * @example
  * <Avatar name={profileName} photoUrl={photoUrl} profEmail={emails.prof} codeEmail={emails.code} />
  */
+
 const Avatar = ({
-  name = 'John Doe', photoUrl = '', profEmail = '', codeEmail = '',
+  name,
+  photoUrl,
+  email: {
+    prof,
+    code,
+  },
+  isPhotoSmall,
+  showName,
+  showContactInfo,
 }) => (
   <div className="app-avatar">
-    <img className="photo" src={photoUrl} alt="Profile Name" />
-    <h1 className="name">{name}</h1>
-    <p>
-      <span className="link">{profEmail}</span>
-      <span className="devider">&nbsp;/&nbsp;</span>
-      <span className="link">{codeEmail}</span>
-    </p>
-    <p><Link className="link" to={appRouter.paragraph.info}>See more detail</Link></p>
+    <img
+      className={`photo ${isPhotoSmall ? 'sm' : 'xg'}-photo`}
+      src={photoUrl}
+      alt="Profile Name"
+    />
+    {
+      showName && (
+        <h1 className="name">{name}</h1>
+      )
+    }
+    {
+      showContactInfo && (
+        <p>
+          <span className="link">{prof}</span>
+          <span className="devider">&nbsp;/&nbsp;</span>
+          <span className="link">{code}</span>
+        </p>
+      )
+    }
   </div>
 );
 
@@ -47,10 +65,24 @@ const Avatar = ({
  * @return {Array} React PropTypes
  */
 Avatar.propTypes = {
-  name: PropTypes.string.isRequired,
-  photoUrl: PropTypes.string.isRequired,
-  profEmail: PropTypes.string.isRequired,
-  codeEmail: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  photoUrl: PropTypes.string,
+  email: PropTypes.object,
+  isPhotoSmall: PropTypes.bool,
+  showName: PropTypes.bool,
+  showContactInfo: PropTypes.bool,
+};
+
+Avatar.defaultProps = {
+  name: 'Carlos Lenon @clenondavis',
+  photoUrl: 'https://avatars0.githubusercontent.com/u/4239218?s=400&u=f2778b9e2ca31ad43ff98c632f2e22e15ab46784&v=4',
+  email: {
+    prof: 'dev@carloslenon.com',
+    code: 'code@carloslenon.com',
+  },
+  isPhotoSmall: false,
+  showName: true,
+  showContactInfo: true,
 };
 
 export default Avatar;

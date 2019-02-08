@@ -3,6 +3,8 @@ $style-location: './common/styles' !default;
 @import './common/styles/_helpers.scss';
 @import './common/styles/_variables.scss';
 @import './common/styles/_globals.scss';
+@import './common/styles/_partial-app.scss';
+@import './common/styles/_avatar.scss';
 
 body {
   margin: 0;

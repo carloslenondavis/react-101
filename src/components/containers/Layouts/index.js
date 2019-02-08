@@ -2,16 +2,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
+// #endregion
+// #region antd
+import {
+  Layout,
+  Menu,
+  Icon,
+  // Avatar,
+} from 'antd';
 // #endregion
 // #region components
-import Layout from 'antd/lib/layout';
-import Menu from 'antd/lib/menu';
-import Icon from 'antd/lib/icon';
+import Footers from '../../presentational/Footers';
+import Avatar from '../../presentational/Avatar';
+import PartialView from '../../presentational/PartialView';
 // #endregion
 
 const {
-  Header,
+  // Header,
   Sider,
   Content,
   Footer,
@@ -34,7 +42,7 @@ class Layouts extends React.Component {
     super();
 
     this.state = {
-      collapsed: false,
+      collapsed: true,
     };
   }
 
@@ -54,7 +62,6 @@ class Layouts extends React.Component {
    * @return {JSX} Components for App
    */
   render() {
-    const { toggleMenu } = this;
     const { children } = this.props;
     const { collapsed } = this.state;
 
@@ -67,41 +74,33 @@ class Layouts extends React.Component {
           collapsible
           collapsed={collapsed}
         >
+          <Avatar
+            photoUrl="https://avatars0.githubusercontent.com/u/4239218?s=400&u=f2778b9e2ca31ad43ff98c632f2e22e15ab46784&v=4"
+            isPhotoSmall
+            showName={false}
+            showContactInfo={false}
+          />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1">
               <Icon type="user" />
-              <span>nav 1</span>
+              <NavLink to="/profile">Who</NavLink>
             </Menu.Item>
             <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <span>nav 2</span>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Icon type="upload" />
-              <span>nav 3</span>
+              <Icon type="ordered-list" />
+              <NavLink to="/todo">ToDo</NavLink>
             </Menu.Item>
           </Menu>
         </Sider>
         <Layout>
-          <Header
-            style={{ background: '#fff', padding: 0 }}
-          >
-            <Icon
-              className="trigger"
-              type={collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={toggleMenu}
-            />
-          </Header>
           <Content
-            style={{
-              margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280,
-            }}
+            className="app-partial-view-container"
           >
-            <h1>Content</h1>
-            {children}
+            <PartialView>
+              {children}
+            </PartialView>
           </Content>
           <Footer>
-            <h1>Footer</h1>
+            <Footers />
           </Footer>
         </Layout>
       </Layout>

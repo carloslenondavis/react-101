@@ -1,0 +1,44 @@
+.app-avatar {
+  text-align: center;
+  padding: 10px;
+
+  .name {
+      color: $base-color-three;
+      font-size: 1.2em;
+      font-weight: normal;
+      color: $base-color-fourth;
+  }
+
+  .photo {
+    border-radius: 100%;
+  }
+
+  .xg-photo {
+      width: 100px;      
+  }
+  
+  .sm-photo {
+      width: 40px;
+  }
+
+  .link {
+      color: $base-color-fourth;
+      font-size: 0.8em;    
+  }
+
+  .devider {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: $base-color-twoo;
+  }
+
+  .info {
+      color: $base-color-fifth;
+      font-size: 0.9em;
+
+      .quote {
+          color: $base-color-sixth;
+          font-size: 1.4em;
+      }
+  }
+}
