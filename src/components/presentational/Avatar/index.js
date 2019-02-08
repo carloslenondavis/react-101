@@ -74,11 +74,11 @@ Avatar.propTypes = {
 };
 
 Avatar.defaultProps = {
-  name: 'Carlos Lenon @clenondavis',
-  photoUrl: 'https://avatars0.githubusercontent.com/u/4239218?s=400&u=f2778b9e2ca31ad43ff98c632f2e22e15ab46784&v=4',
+  name: 'Luis Carlos @lvaldiva',
+  photoUrl: 'https://avatars.githubusercontent.com/LuisValdivia',
   email: {
-    prof: 'dev@carloslenon.com',
-    code: 'code@carloslenon.com',
+    prof: 'dev@desarrolladores.com',
+    code: 'code@desarrolladores.com',
   },
   isPhotoSmall: false,
   showName: true,

@@ -75,7 +75,7 @@ class Layouts extends React.Component {
           collapsed={collapsed}
         >
           <Avatar
-            photoUrl="https://avatars0.githubusercontent.com/u/4239218?s=400&u=f2778b9e2ca31ad43ff98c632f2e22e15ab46784&v=4"
+            photoUrl="https://avatars.githubusercontent.com/LuisValdivia"
             isPhotoSmall
             showName={false}
             showContactInfo={false}
